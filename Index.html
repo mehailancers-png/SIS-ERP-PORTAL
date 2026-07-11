@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SIS ERP Portal v1.0 | Seervi International School, Jaitaran</title>
+    <meta name="description" content="Official Enterprise Resource Planning (ERP) Portal for Seervi International School, Jaitaran, Beawar, Rajasthan. Modern, efficient, and transparent school management.">
+    <meta name="keywords" content="Seervi International School, Jaitaran, Beawar, Rajasthan, School ERP, SIS Portal, Education Management System, School Results, PYQ">
+    <meta name="author" content="SIS ERP Architecture Team">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seerviinternationalschool.edu.in/erp/">
+    <meta property="og:title" content="SIS ERP Portal v1.0 | Seervi International School">
+    <meta property="og:description" content="Access results, academic documents, previous year question papers, and manage institutional workflows seamlessly.">
+    <meta property="og:image" content="assets/images/og-banner.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://seerviinternationalschool.edu.in/erp/">
+    <meta property="twitter:title" content="SIS ERP Portal v1.0 | Seervi International School">
+    <meta property="twitter:description" content="Access results, academic documents, previous year question papers, and manage institutional workflows seamlessly.">
+    <meta property="twitter:image" content="assets/images/og-banner.jpg">
+
+    <link rel="manifest" href="manifest.json" id="pwa-manifest">
+    <meta name="theme-color" content="#0B3D91">
+    <link rel="apple-touch-icon" href="assets/icons/apple-icon-180x180.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS reset & base settings just to prevent unstyled flash while layout loads */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; background-color: #F3F8FF; color: #333; overflow-x: hidden; scroll-behavior: smooth; }
+        .placeholder-box { background: linear-gradient(135deg, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%); background-size: 400% 400%; animation: shimmer 2s infinite linear; display: flex; align-items: center; justify-content: center; color: #475569; font-weight: 500; border: 2px dashed #94a3b8; border-radius: 8px; text-align: center; padding: 20px; }
+        @keyframes shimmer { 0% { background-position: 100% 0%; } 100% { background-position: 0% 100%; } }
+    </style>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="logo-area">
+                <div class="logo-placeholder">
+                    <span>SIS</span>
+                </div>
+                <div class="school-title">
+                    <h1>Seervi International School</h1>
+                    <span class="school-location">Jaitaran, Beawar (Raj.)</span>
+                </div>
+            </a>
+            
+            <button class="hamburger-btn" id="sidebarToggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="nav-sidebar" id="navSidebar" aria-hidden="true">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <div class="logo-placeholder micro"><span>SIS</span></div>
+                <h3>ERP Menu</h3>
+            </div>
+            <button class="close-sidebar-btn" id="sidebarClose" aria-label="Close Navigation Menu">&times;</button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item active"><span class="nav-icon">🏠</span> Home</a></li>
+                <li><a href="results.html" class="nav-item"><span class="nav-icon">📊</span> Results Portal</a></li>
+                <li><a href="documents.html" class="nav-item"><span class="nav-icon">📁</span> Document Verification</a></li>
+                <li><a href="pyq.html" class="nav-item"><span class="nav-icon">📚</span> PYQs & Resources</a></li>
+                <li><a href="appointment.html" class="nav-item"><span class="nav-icon">📆</span> Book Appointment</a></li>
+                <li class="nav-divider"></li>
+                <li><a href="student-login.html" class="nav-item portal-link"><span class="nav-icon">👨‍🎓</span> Student Portal</a></li>
+                <li><a href="parent-portal.html" class="nav-item portal-link"><span class="nav-icon">👪</span> Parent Portal</a></li>
+                <li><a href="staff-login.html" class="nav-item portal-link"><span class="nav-icon">💼</span> Staff / Admin Portal</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>SIS ERP Portal v1.0</p>
+            <span>Future Firebase Ready</span>
+        </div>
+    </aside>
+
+    <section class="hero-section">
+        <div class="hero-banner-placeholder placeholder-box">
+            <div class="placeholder-content">
+                <span class="placeholder-tag">[Large Banner Placeholder - 1920x800]</span>
+                <h2>Premium Academic Environment</h2>
+                <p>Nurturing Global Leaders with Traditional Roots</p>
+            </div>
+        </div>
+        <div class="hero-overlay-content">
+            <div class="hero-text-wrapper fade-in-up">
+                <h2>Welcome to Seervi International School</h2>
+                <p>An Institutional Paradigm of Excellence, Innovation, and Character Building.</p>
+                <div class="hero-actions">
+                    <a href="student-login.html" class="btn btn-primary ripple">Access Student ERP</a>
+                    <a href="#about" class="btn btn-outline ripple">Explore Institution</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+
+        <section id="about" class="section-block scroll-reveal">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-subtitle">Who We Are</span>
+                    <h2>About Our Institution</h2>
+                    <div class="accent-line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Seervi International School standing prominently in Jaitaran, Beawar, Rajasthan is an elite institutional gateway focused on providing holistic schooling of international standards. Inspired by the rigorous architectures of apex government and educational portals, our administrative frameworks ensure supreme discipline, educational integrity, and absolute technological modernism.</p>
+                        <p>Our focus expands beyond basic curriculum frameworks into deeper analytical capabilities, physical resilience, and strong ethical values, priming students for future global environments.</p>
+                    </div>
+                    <div class="about-visual">
+                        <div class="placeholder-box visual-mock" style="height: 300px;">
+                            <span>[Image Placeholder - Academic Campus View - 600x400]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="section-block alt-bg scroll-reveal">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-subtitle">Excellence In Action</span>
+                    <h2>Institutional Milestones</h2>
+                    <div class="accent-line"></div>
+                </div>
+                <div class="achievements-display">
+                    <div class="metric-row">
+                        <div class="metric-item">
+                            <span class="metric-number">100%</span>
+                            <span class="metric-label">RBSE Board Success Rate</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">45+</span>
+                            <span class="metric-label">District & State Sports Honors</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">5000+</span>
+                            <span class="metric-label">Alumni in Global Industries</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">Top 1</span>
+                            <span class="metric-label">Ranked School in Jaitaran Region</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section-block scroll-reveal">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-subtitle">Visual Overview</span>
+                    <h2>Poster & Event Gallery</h2>
+                    <div class="accent-line"></div>
+                </div>
+                <div class="poster-gallery-grid">
+                    <div class="placeholder-box gallery-item" style="aspect-ratio: 4/3;">
+                        <span>[Poster Placeholder - Annual Day Celebrations]</span>
+                    </div>
+                    <div class="placeholder-box gallery-item" style="aspect-ratio: 4/3;">
+                        <span>[Poster Placeholder - Science & Tech Expo]</span>
+                    </div>
+                    <div class="placeholder-box gallery-item" style="aspect-ratio: 4/3;">
+                        <span>[Poster Placeholder - State Level Sports Meet]</span>
+                    </div>
+                    <div class="placeholder-box gallery-item" style="aspect-ratio: 4/3;">
+                        <span>[Poster Placeholder - Independence Day Parade]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="highlights" class="section-block alt-bg scroll-reveal">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-subtitle">Key Features</span>
+                    <h2>School Highlights</h2>
+                    <div class="accent-line"></div>
+                </div>
+                <div class="highlights-list">
+                    <div class="highlight-stripe">
+                        <div class="stripe-badge">🏛️</div>
+                        <div class="stripe-content">
+                            <h3>Rigorous Curriculum Design</h3>
+                            <p>Structured closely around premium board standards offering competitive advantages for national exams.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-stripe">
+                        <div class="stripe-badge">🌐</div>
+                        <div class="stripe-content">
+                            <h3>Future-Ready ERP Framework</h3>
+                            <p>End-to-end digital lifecycle operations from tracking records to accessing structured resource architectures.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-stripe">
+                        <div class="stripe-badge">🧪</div>
+                        <div class="stripe-content">
+                            <h3>Advanced Science Labs</h3>
+                            <p>Equipped with industry-standard diagnostic and experimental apparatuses ensuring experiential mastery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="principal" class="section-block scroll-reveal">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-subtitle">Leadership Message</span>
+                    <h2>From the Desk of the Principal</h2>
+                    <div class="accent-line"></div>
+                </div>
+                <div class="principal-layout">
+                    <div class="principal-avatar">
+                        <div class="placeholder-box portrait-mock" style="width: 240px; height: 300px; margin: 0 auto;">
+                            <span>[Principal Portrait - 240x300]</span>
+                        </div>
+                    </div>
+                    <div class="principal-quote">
+                        <blockquote>
+                            "Education is not merely the accumulation of facts, but the deep training of the mind to think logically, build character, and serve the nation selflessly. At Seervi International School, we build the foundation upon which robust futures sit securely."
+                        </blockquote>
+                        <p class="principal-sign">- <strong>Executive Principal</strong>, Seervi International School</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="facilities" class="section-block alt-bg scroll-reveal">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-subtitle">Infrastructure</span>
+                    <h2>World Class Facilities</h2>
+                    <div class="accent-line"></div>
+                </div>
+                <div class="facilities-grid">
+                    <div class="facility-strip">
+                        <div class="placeholder-box facility-img" style="width: 150px; height: 100px;">
+                            <span>[Img 150x100]</span>
+                        </div>
+                        <div class="facility-desc">
+                            <h3>Digital Classrooms</h3>
+                            <p>Smart interactive technology integrated across all operational standard classrooms.</p>
+                        </div>
+                    </div>
+                    <div class="facility-strip">
+                        <div class="placeholder-box facility-img" style="width: 150px; height: 100px;">
+                            <span>[Img 150x100]</span>
+                        </div>
+                        <div class="facility-desc">
+                            <h3>Enriched Library</h3>
+                            <p>Over 10,000 reference modules, academic research indices, and study spaces.</p>
+                        </div>
+                    </div>
+                    <div class="facility-strip">
+                        <div class="placeholder-box facility-img" style="width: 150px; height: 100px;">
+                            <span>[Img 150x100]</span>
+                        </div>
+                        <div class="facility-desc">
+                            <h3>Sports Complex</h3>
+                            <p>Expansive running tracks, cricket validation nets, and dedicated indoor arenas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="admission" class="section-block admission-cta-section text-center">
+            <div class="container">
+                <div class="cta-banner-wrapper">
+                    <h2>Admissions Open for Academic Session 2026 - 2027</h2>
+                    <p>Secure your child's entry into Rajasthan's most comprehensive educational pipeline today.</p>
+                    <div class="cta-buttons-group">
+                        <a href="appointment.html" class="btn btn-accent ripple">Book Parent Appointment</a>
+                        <a href="tel:+911234567890" class="btn btn-outline-white">Call Admissions Office</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-block scroll-reveal">
+            <div class="container">
+                <div class="section-header-center">
+                    <span class="section-subtitle">Reach Out</span>
+                    <h2>Contact Information</h2>
+                    <div class="accent-line"></div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info-panel">
+                        <h3>Campus Address</h3>
+                        <p><strong>Seervi International School</strong></p>
+                        <p>Jaitaran, Beawar District,</p>
+                        <p>Rajasthan, India - 306308</p>
+                        
+                        <div class="contact-meta-lines" style="margin-top: 20px;">
+                            <p>📞 <strong>Phone:</strong> +91 2939 22X XXX, +91 9414X XXXXX</p>
+                            <p>✉️ <strong>Email:</strong> info@seerviinternationalschool.edu.in</p>
+                            <p>⏰ <strong>Hours:</strong> Mon - Sat | 08:00 AM - 02:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-map-panel">
+                        <div class="placeholder-box map-placeholder" style="width: 100%; height: 320px;">
+                            <div class="map-text">
+                                📍 <strong>[Google Map Placeholder Layout]</strong><br>
+                                <span style="font-size: 0.85rem; color:#64748b;">Target Geo Coordinates: Jaitaran, Beawar, Rajasthan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button class="back-to-top-btn" id="backToTop" aria-label="Scroll back to top">↑</button>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo-placeholder micro"><span>SIS</span></div>
+                <h3>Seervi International School</h3>
+                <p>Premium architectural institutional tracking platform built with absolute vanilla performance metrics.</p>
+            </div>
+            <div class="footer-links-group">
+                <h4>Quick Actions</h4>
+                <ul>
+                    <li><a href="results.html">Search Results</a></li>
+                    <li><a href="documents.html">Verify Documents</a></li>
+                    <li><a href="pyq.html">Download PYQs</a></li>
+                    <li><a href="appointment.html">Fix Appointment</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h4>Secure Portals</h4>
+                <ul>
+                    <li><a href="student-login.html">Student Access</a></li>
+                    <li><a href="parent-portal.html">Parent Access</a></li>
+                    <li><a href="staff-login.html">Staff Console</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Seervi International School. All Rights Reserved. | Designed to Enterprise ERP Standard Specifications.</p>
+            <span class="firebase-badge">Firestore & Authentication Infrastructure Ready</span>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header Scroll Transformation Logic
+            const mainHeader = document.getElementById('mainHeader');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    mainHeader.classList.add('header-solid');
+                } else {
+                    mainHeader.classList.remove('header-solid');
+                }
+            });
+
+            // Navigation Sidebar Toggle Functionality
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebarClose = document.getElementById('sidebarClose');
+            const navSidebar = document.getElementById('navSidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+            function openSidebar() {
+                navSidebar.classList.add('sidebar-open');
+                sidebarOverlay.classList.add('overlay-active');
+                navSidebar.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSidebar() {
+                navSidebar.classList.remove('sidebar-open');
+                sidebarOverlay.classList.remove('overlay-active');
+                navSidebar.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            if(sidebarToggle) sidebarToggle.addEventListener('click', openSidebar);
+            if(sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
+            if(sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+
+            // Escape Key Sidebar dismissal
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeSidebar();
+                }
+            });
+
+            // Back To Top Visibility & Mechanics
+            const backToTopBtn = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('back-to-top-visible');
+                } else {
+                    backToTopBtn.classList.remove('back-to-top-visible');
+                }
+            });
+            
+            if(backToTopBtn) {
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Scroll Animation Observer Setup (Intersection Observer)
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                revealElements.forEach(el => observer.observe(el));
+            } else {
+                // Fallback for older configurations
+                revealElements.forEach(el => el.classList.add('revealed'));
+            }
+
+            // Pure CSS Ripple Effect Emulation Helper
+            const rippleButtons = document.querySelectorAll('.ripple');
+            rippleButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    let x = e.clientX - e.target.getBoundingClientRect().left;
+                    let y = e.clientY - e.target.getBoundingClientRect().top;
+                    let ripple = document.createElement('span');
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple-effect');
+                    this.appendChild(ripple);
+                    setTimeout(() => { ripple.remove(); }, 600);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
